@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelAura</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="plane-apple-touch-icon.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="plane-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="plane-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="plane-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="plane-512x512.png"
+    />
+    <link rel="shortcut icon" href="plane.ico" />
+    <link rel="manifest" href="plane-site.webmanifest" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://api.geoapify.com/v1/geocode/autocomplete?apiKey=90c3aa710bd746a49cca2a44e9bc8b5c"></script>
+  </head>
+  <body>
+    <header>
+      <h1 id="site-title">
+        <div class="title-container">
+          <span>T</span>
+          <span>r</span>
+          <span>a</span>
+          <span>v</span>
+          <span>e</span>
+          <span>l</span>
+          <span>A</span>
+          <span>u</span>
+          <span>r</span>
+          <span>a</span>
+        </div>
+      </h1>
+    </header>
+
+    <div id="main-content">
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <h2 class="sidebar-title">Menu</h2>
+        </div>
+        <a href="#" class="menu-item"
+          ><i class="fa-solid fa-user"></i> About Us</a
+        >
+        <a href="#" class="menu-item" id="contact-toggle"
+          ><i class="fa-solid fa-address-book"></i> Connect With Us
+          <span class="arrow-down">&#9660;</span>
+        </a>
+        <ul id="contact-options" class="drop-down">
+          <li>
+            <a href="#"><i class="fa-solid fa-envelope"></i> Gmail</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-target="itinerary-content">
+          Itinerary Planner
+        </button>
+        <button class="tab" data-target="flights-content">Flights</button>
+        <button class="tab" data-target="trains-content">Trains</button>
+        <button class="tab" data-target="buses-content">Buses</button>
+        <button class="tab" data-target="hotels-content">Hotel Booking</button>
+      </div>
+
+      <div id="itinerary-content" class="container">
+        <main>
+          <p>Plan your perfect trip with our customized itineraries!</p>
+          <form id="travel-form">
+            <label for="from">From:</label>
+            <input
+              type="text"
+              id="from"
+              name="from"
+              required
+              list="from-suggestions"
+            />
+            <datalist id="from-suggestions"></datalist>
+
+            <label for="to">To:</label>
+            <input
+              type="text"
+              id="to"
+              name="to"
+              required
+              list="to-suggestions"
+            />
+            <datalist id="to-suggestions"></datalist>
+
+            <label for="start-date">Date of Start:</label>
+            <input type="date" id="start-date" name="start-date" required />
+
+            <label for="end-date">Date of End:</label>
+            <input type="date" id="end-date" name="end-date" required />
+
+            <label for="trip-type">Type of Trip:</label>
+            <select id="trip-type" name="trip-type" required>
+              <option value="" disabled selected>Select Trip Type</option>
+              <option value="solo">Solo</option>
+              <option value="couple">Couple</option>
+              <option value="family">Family</option>
+              <option value="friends">Friends</option>
+            </select>
+            <div class="button-container">
+              <button type="submit">Generate Itinerary</button>
+              <button type="button" id="reset-button">Reset</button>
+            </div>
+          </form>
+          <div id="itinerary"></div>
+        </main>
+      </div>
+
+      <div id="flights-content" class="container" style="display: none">
+        <main>
+          <p class="flights-heading">Book your flights with ease!</p>
+
+          <form id="flights-form">
+            <label for="flight-from">From:</label>
+            <input
+              type="text"
+              id="flight-from"
+              name="flight-from"
+              required
+              list="flight-from-suggestions"
+            />
+            <datalist id="flight-from-suggestions"></datalist>
+
+            <label for="flight-to">To:</label>
+            <input
+              type="text"
+              id="flight-to"
+              name="flight-to"
+              required
+              list="flight-to-suggestions"
+            />
+            <datalist id="flight-to-suggestions"></datalist>
+
+            <div>
+              <input
+                type="radio"
+                id="one-way"
+                name="trip-type"
+                value="one-way"
+                checked
+              />
+              <label for="one-way">One Way</label>
+              <input
+                type="radio"
+                id="round-trip"
+                name="trip-type"
+                value="round-trip"
+              />
+              <label for="round-trip">Round Trip</label>
+            </div>
+
+            <label for="flight-start-date">Date of Departure:</label>
+            <input
+              type="date"
+              id="flight-start-date"
+              name="flight-start-date"
+              required
+            />
+
+            <label for="flight-end-date">Date of Return:</label>
+            <input
+              type="date"
+              id="flight-end-date"
+              name="flight-end-date"
+              required
+              disabled
+            />
+
+            <label for="passengers">Passengers:</label>
+            <select id="passengers" name="passengers">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <button type="submit" class="transform-button">
+              Search Flights
+            </button>
+            <button type="reset" class="transform-button">Reset</button>
+          </form>
+        </main>
+        <div id="flights-results"></div>
+      </div>
+
+      <div id="trains-content" class="container" style="display: none">
+        <main>
+          <p class="trains-heading">Section Under Maintenance</p>
+        </main>
+        <!-- Trains content goes here -->
+      </div>
+      <div id="buses-content" class="container" style="display: none">
+        <main>
+          <p class="buses-heading">Section Under Maintenance</p>
+        </main>
+        <!-- Buses content goes here -->
+      </div>
+      <div id="hotels-content" class="container" style="display: none">
+        <main>
+          <p class="hotels-heading">Section Under Maintenance</p>
+        </main>
+        <!-- Hotel Booking content goes here -->
+      </div>
+
+      <script src="script.js"></script>
+      <script>
+        document
+          .getElementById("reset-button")
+          .addEventListener("click", function () {
+            document.getElementById("travel-form").reset();
+            document.getElementById("itinerary").innerHTML = "";
+          });
+      </script>
+    </div>
+  </body>
+</html>

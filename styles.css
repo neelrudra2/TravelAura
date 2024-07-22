@@ -1,0 +1,500 @@
+body, html{
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    cursor: default;
+    overflow-x: hidden;
+    background-image: url(back.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#main-content {
+    flex: 1;
+    padding-top: 10px; /* Adjust the top padding as needed */
+}
+
+a, select, option, input[type="radio"] {
+    cursor: pointer;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.tabs button {
+    cursor: pointer;
+    padding: 10px 25px;
+    height: 100%;
+    margin: 10px;
+    background-color: #226ebb;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: white;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tabs button:hover {
+    background-color: #226ebb;
+}
+
+.tabs button:active {
+    background-color: #226ebb;
+    transform: translateY(2px);
+}
+
+.tabs button.active {/*idat change koro*/
+    background-color: #f9a825; /* More distinct color for the active tab */
+    color: black; /* Ensure text is readable */
+    font-weight: bold; /* Make the text bold */
+    border-bottom: 1px solid #ccc; /* Add bottom border to active tab */
+}
+
+.container {
+    /*background-color: rgba(30, 30, 30, 0.8);*/
+    background-color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+header {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 auto;
+    color: rgb(223, 74, 74);
+    padding: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #b0bec5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #226ebb;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    flex: 1;
+}
+
+form button:first-of-type {
+    margin-right: 10px; /* Add gap between buttons */
+}
+
+.button-container {
+    display: block; /* Ensure buttons are displayed as block elements */
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+.button-container button {
+    display: block; /* Ensure buttons are displayed as block elements */
+    width: 100%; /* Make buttons take full width of their container */
+    margin-bottom: 5px; /* Add space between buttons */
+}
+
+.button-container button:active {
+    transform: translateY(1px);
+}
+
+.transform-button:active {
+    transform: translateY(1px);
+  }
+
+form button:hover {
+    background-color: #226ebb;
+}
+
+#itinerary {
+    margin-top: 60px;
+    padding: 10px;
+    background-color: black;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#itinerary-content main p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.flights-heading {
+    margin-top: 10px;
+}
+
+#flights-content main p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+#itinerary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#itinerary th, #itinerary td {
+    border: 2px solid #fff;
+    padding: 8px;
+    text-align: left;
+}
+
+#itinerary th {
+    background-color: #226ebb;
+    font-weight: bold;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    form input, form select, form button {
+        font-size: 0.9em;
+    }
+
+    header {
+        position: fixed; /* or adjust as needed */
+    }    
+
+}
+
+datalist {
+    transition: all 0.2s ease-in-out; /* Smooth transition */
+}
+
+#flight-to {
+    margin-bottom: 10px; /* Adds space below the To input */
+}
+
+#flights-form input[type="radio"] {
+    margin-bottom: 10px; /* Adds space above the radio buttons */
+}
+
+#trip-type-container,
+#flight-trip-type-container {
+    margin-top: 10px;
+}
+
+#trip-type-container input,
+#flight-trip-type-container input {
+    margin-right: 10px;
+}
+
+#trip-type-container label,
+#flight-trip-type-container label {
+    margin-right: 20px;
+}
+
+#return-date,
+#flight-return-date {
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th {
+    background-color: #226ebb;
+    font-weight: bold;
+    padding: 8px;
+}
+
+td {
+    padding: 8px;
+}
+
+.center-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#flights-results {
+    margin-top: 60px;
+}
+
+.results-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: black;
+    margin-top: 20px;
+}
+
+.results-container h2 {
+    font-weight: bold;
+    color: white; /* Change color as needed */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.results-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.results-container th, .results-container td {
+    border: 2px solid #fff; /* White border to hide table lines */
+    padding: 8px;
+    text-align: left;
+}
+
+.results-container th {
+    background-color: #226ebb; /* Yellow background for headings */
+    font-weight: bold;
+    color: white; /* Black text color for headings */
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.hamburger-menu i {
+    font-size: 24px;
+    color: white;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+    border: 1px solid #ccc;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 999; /* Adjust z-index to ensure it overlays the content */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    color: #f9a825;
+    align-self: center;
+}
+
+.sidebar-title {
+    margin: 0;
+    font-size: 1.5em;
+    align-self: center;
+    color: #f9a825;
+    align-items: center;
+}
+
+.sidebar a {
+    padding: 10px 8px 10px 32px;
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    transform: translateY(20px);
+    opacity: 1;
+}
+
+.sidebar ul a{
+    padding-left: 22px;
+}
+
+.sidebar.open a{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+#sidebar.open {
+    width: 250px; /* Adjust width as needed */
+}
+
+.menu-item i {
+    margin-right: 6px;
+    font-size: 1em;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    font-size: 1em;
+    list-style-type: none;
+}
+
+.menu-item .arrow-down {
+    margin-left: 0; /* Adjust spacing as needed */
+    font-size: 14px;
+}
+
+.drop-down i{
+    margin-right: 6px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-right: 40px;
+}
+
+/* Style for the date input fields */
+
+input[type="date"] {
+    font-size: 16px; /* Adjust font size for better readability */
+    padding: 5px;   /* Add padding for better spacing */
+    border: 1px solid #ccc; /* Border to define the input field */
+    border-radius: 5px; /* Rounded corners for the input field */
+    background-color: #fff; /* Background color for the input field */
+}
+
+/* Style for the date input calendar button */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer; /* Change cursor to pointer to indicate clickable element */
+    border: 1px solid #007bff; /* Border around the calendar icon */
+    border-radius: 3px; /* Rounded corners for the calendar button */
+    background-color: #f0f0f0; /* Background color for better visibility */
+    padding: 5px; /* Padding around the calendar icon */
+}
+
+/* Style for other browser's calendar picker */
+input[type="date"]::-moz-calendar-picker-indicator,
+input[type="date"]::-ms-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+/* Style for the disabled date input */
+input[type="date"][disabled] {
+    background-color: #303030; /* Light gray background */
+    color: #909090; /* Gray text color */
+    cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+    border: 1px solid #ccc; /* Border to match disabled appearance */
+}
+
+@keyframes colorShift {
+    0% {
+      color: rgb(223, 74, 74);
+    }
+    50% {
+        color: white;
+      }
+    100% {
+      color: blue;
+    }
+}
+  
+#site-title {
+    font-size: 2.2em; /* Adjust size as needed */
+    font-weight: bold; /* Optional: makes the text bold */
+    display: inline;
+    background-color: black;
+    border-bottom: 5px solid #ccc;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 25px;
+}
+  
+#site-title span {
+    position: static;
+    display: inline-block;
+    animation: colorShift 4s linear infinite;
+    width: 10%;
+}
+.title-container {
+    display: flex;
+    justify-content: center;
+}
+ 
+#site-title span:nth-child(1) { animation-delay: 0s; }
+#site-title span:nth-child(2) { animation-delay: 0.1s; }
+#site-title span:nth-child(3) { animation-delay: 0.2s; }
+#site-title span:nth-child(4) { animation-delay: 0.3s; }
+#site-title span:nth-child(5) { animation-delay: 0.4s; }
+#site-title span:nth-child(6) { animation-delay: 0.5s; }
+#site-title span:nth-child(7) { animation-delay: 0.6s; }
+#site-title span:nth-child(8) { animation-delay: 0.7s; }
+#site-title span:nth-child(9) { animation-delay: 0.8s; }
+#site-title span:nth-child(10) { animation-delay: 0.9s; }
+#site-title span:nth-child(11) { animation-delay: 1s; }
+#site-title span:nth-child(12) { animation-delay: 1.1s; }
+  
